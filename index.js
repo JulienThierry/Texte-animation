@@ -8,16 +8,30 @@ const createLetter = () => {
   target.appendChild(letter);
 
   letter.textContent = array[wordIndex][letterIndex];
+
+  setTimeout(() => {
+    letter.remove();
+  }, 2800);
 };
 
 const loop = () => {
   setTimeout(() => {
-    if (letterIndex < array[wordIndex].length) {
+    if (wordIndex >= array.length) {
+      wordIndex = 0;
+      letterIndex = 0;
+      loop();
+    } else if (letterIndex < array[wordIndex].length) {
       createLetter();
       letterIndex++;
       loop();
+    } else {
+      wordIndex++;
+      letterIndex = 0;
+      setTimeout(() => {
+        loop();
+      }, 2800);
     }
-  }, 50);
+  }, 60);
 };
 
 loop();

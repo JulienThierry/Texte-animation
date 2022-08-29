@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
-
 body {
   min-height: 100vh;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Courier New", Courier, monospace;
   display: flex;
   align-items: center;
   justify-content: center;
